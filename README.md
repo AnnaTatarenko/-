@@ -14,6 +14,8 @@
 		<li><a href="aframe_лаб3.html" target="_blank">Завдання третього тижня</a></li>
 		<li><a href="aframe_lab4.html" target="_blank">Завдання четвертого тижня</a></li>
 		<li><a href="aframe_lab5.html" target="_blank">Завдання п'ятого тижня</a></li>
+		<li><a href="aframe_lab6.html" target="_blank">Завдання шостого тижня</a></li>
+		<li><a href="aframe_lab7.html" target="_blank">Завдання сьомого тижня</a></li>
 
 	</ol>
 </body>
