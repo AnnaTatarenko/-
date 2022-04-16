@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Перший приклад роботи у Three.js</title>
+	<script src="three.js-dev/build/three.js"></script>
+</head>
+<body>
+	<canvas id=Canvas></canvas>
+
+	<script type="text/javascript">
+
+		var render = new THREE.WebGLRenderer({canvals:document.getElementById("Canvas"), antialias: true, alpha: false });
+
+		renderer.setClearColor(0xCBEFFF);
+		renderer.setPixelRatio(window.devicePixelRatio);
+		renderer.setSize(window.innerWidth, window.innerHeight);
+
+		var camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 4000 );
+
+        var scene = new THREE.Scene():
+
+        const helper = new THREE.CameraHelper( camera );
+        scene.add( helper );
+		
+
+		var pyramidgeometry=new THREE.CylinderGeometry(0, 0.8, 2, 4);
+		var pyramidmaterial=new THREE.MeshLambertMaterial({color: 0xF3FFE2});
+		var pyramidmesh=new THREE.Mesh(pyramidgeometry, pyramidmaterial);
+		pyramidmesh.position.set(0, -2, -10);
+		//camera.position.set(0, -2, -10)
+
+		scene.add(pyramidmesh);
+
+		var lightOne=new THREE.AmbientLight(0xffff, 0.2);
+		scene.add(lightOne);
+
+		var lightTwo=new THREE.PointLight(0xffff, 0.75);
+		scene.add(lightTwo);
+		lightTwo.position.set(0,-2,10);
+
+		const pointLightHelper = new THREE.PointLightHelper( lightTwo, 2);
+		scene.add( pointLightHelper );
+
+		var lightThree=new THREE.AmbientLight(0xffff, 0.5);
+
+		const helper = new THREE.DirectionalLightHelper( lightThree, 5 );
+		scene.add( helper );
+
+		const axesHelper = new THREE.AxesHelper( 5 );
+		scene.add( axesHelper );
+
+		var phi = 0;
+
+		var boxgeometry=new THREE.BoxGeometry(1, 1, 1);
+		var boxmaterial=new THREE.LineDashedMaterial({color: 0xFF0000});
+		var boxmesh=new THREE.Mesh(boxgeometry, boxmaterial);
+
+		const wireframe = new THREE.WireframeGeometry( boxgeometry );
+		
+		    boxmesh.position.set(-0.9, 0, -6);
+		    scene.add(boxmesh);
+
+		
+
+	function render()
+	{
+		var x=2 * Math.cos(phi);
+		var y=2 * Math.sin(phi);
+		phi+=0.05;
+
+		//boxgeometry.scale(2.1+x,1,1);
+
+		//lightThree.position.y+=0.1;
+		//camera.position.set(x,y-2,10);
+		//lightTwo.position.set(x,y-2,10);
+		pyramidmesh.rotation.x+=0.1;
+		//boxgeometry.rotation.x+=0.1;
+		//pyramidmesh.material.
+
+		renderer.render(scene, camera);
+		requestAnimationFrame(render);
+	}
+
+	render();
+
+	</script>
+
+</body>
+</html>
