@@ -83,14 +83,14 @@ scene.add(lightOne);
          // document.getElementById("Canvas").onclick = changeTarget;
  
             //напівсферичне освітлення
-            //var lightOne = new THREE.HemisphereLight(0xfffff, 0x080820, 1);
-            //scene.add(lightOne);
+            var lightOne = new THREE.HemisphereLight(0xfffff, 0x080820, 1);
+            scene.add(lightOne);
 
 
             //прожекторне освітлення
-            //var lightOne = new THREE.SpotLight(0xfffff, 0.5);
-            //lightOne.target = conemesh;
-            //scene.add(lightOne);
+            var lightOne = new THREE.SpotLight(0xfffff, 0.5);
+            lightOne.target = conemesh;
+            scene.add(lightOne);
  
             //відкидання тіней
             //var lightOne = new THREE.SpotLight(0xfffff, 2.0, 3000);
