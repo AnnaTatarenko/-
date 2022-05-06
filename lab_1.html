@@ -1,0 +1,65 @@
+<html>
+
+    <head>
+        <title>Лабораторна робота 1</title>
+        <meta name="description" content="Build your own planetarium with A-frame">
+        <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-star-system-component@1.0.0/index.js"></script>
+
+        <!-- let's add the animation and orbit controls components -->
+        <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    </head>
+
+    <body>
+        <a-scene>
+
+            <!-- This is a "mixin" we can apply to planets to make them
+            rotate-->
+            <a-mixin id="rotation" animation="property: rotation; loop: true; from:  0 0 0; to: 0 360 0; dur: 20000; easing: linear;"></a-mixin>
+
+            <!-- here is a "mixin" that we can apply to a container to make the
+            planet inside it orbit -->
+            <a-mixin id="orbit" animation="property: rotation; loop: true; to: 0 360 0; dur: 40000; easing: linear;"></a-mixin>
+
+            <a-assets>
+                <img id="sun-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2F1024px-Map_of_the_full_sun.jpg?1540859304920"
+                    crossorigin="anonymous">
+                <img id="earth-texture" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_2048.jpg"
+                    crossorigin="anonymous">
+                <img id="moon-texture" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/moon_1024.jpg" crossorigin="anonymous">
+            </a-assets>
+
+            <!-- Give some basic lighting here. Ambient lighting lights the
+            whole scene and makes sure we can still see our rings. -->
+            <a-entity id="basic-light" light="type: ambient; color: #BBB"></a-entity>
+
+            <!--use our new orbit-controls-->
+            <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; initialPosition: 0 0 13"></a-entity>
+
+            <a-sky color="black"></a-sky>
+            <a-entity light="color: #FFFFFF; intensity: 1.5" position="-1 1 0"></a-entity>
+
+                <a-entity id="earth-and-moon" position="0 0 10.5">
+                    <a-entity id="earth-container">
+                        <a-sphere position="0 0 0" radius=".5" id="earth" src="#earth-texture" mixin="rotation"></a-sphere>
+                        <a-entity id="moon-container" mixin="orbit">
+                            <a-sphere position="-1 0 0" radius=".10" id="moon" src="#moon-texture"></a-sphere>
+                        </a-entity>
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+
+
+          
+
+        </a-scene>
+
+
+        <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+        <script src="https://button.glitch.me/button.js"></script>
+    </body>
+
+</html>
