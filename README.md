@@ -20,6 +20,7 @@
 		<li><a href="LightCamera_w9.html" target="_blank">Завдання дев'ятого тижня</a></li>
 		<li><a href="aframe_lab10.html" target="_blank">Завдання десятого тижня</a></li>
 		<li><a href="aframe_lab11.html" target="_blank">Завдання одинадцятого тижня</a></li>
+		<li><a href="Lab_1_marker.html" target="_blank">Лабораторна робота</a></li>
 		
 
 	</ol>
