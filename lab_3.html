@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script
+src="https://cdn.8thwall.com/web/aframe/8frame-1.3.0.min.js">
+</script>
+ <script
+src="https://cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+ <script async
+src="https://apps.8thwall.com/xrweb?appKey=XXXXXX"></script>
+</head>
+<body>
+  
+<a-mixin id="orbit" animation="property: rotation; loop: true; to: 0 360 0; dur: 40000; easing: linear;"></a-mixin>
+<a-mixin id="rotation" animation="property: rotation; loop: true; from:  0 0 0; to: 0 360 0; dur: 20000; easing: linear;"></a-mixin>
+
+<a-scene xrweb xrextras-tap-recenter xrextras-almost-there
+xrextras-loading xrextras-runtime-error>
+<a-entity mixin="rotation">
+<a-sphere src="https://raw.githubusercontent.com/AnnaTatarenko/work/main/texture/earthmap1.jpg"  
+         radius="5" position="0 0 0">
+  
+</a-sphere>
+</a-entity>
+
+<a-entity mixin="orbit">
+<a-sphere src="https://raw.githubusercontent.com/AnnaTatarenko/work/main/texture/moonbump4k.jpg" 
+          radius="2" position="7 2 0">
+  
+</a-sphere>
+</a-entity>
+
+ 
+<a-camera position="0 10 10"></a-camera>
+</a-scene>
+
+</body>
+</html>
