@@ -21,7 +21,7 @@
 		<li><a href="aframe_lab10.html" target="_blank">Завдання десятого тижня</a></li>
 		<li><a href="aframe_lab11.html" target="_blank">Завдання одинадцятого тижня</a></li>
 		<li><a href="aframe_lab11(2).html" target="_blank">Завдання одинадцятого тижня(3D model)</a></li>
-		<li><a href="Lab_1_marker.html" target="_blank">Лабораторна робота</a></li>
+		<li><a href="lab_1.html" target="_blank">Лабораторна робота</a></li>
 		
 
 	</ol>
