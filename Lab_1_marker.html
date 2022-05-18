@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Earth</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets> <img id = "Earth" src = "https://raw.githubusercontent.com/AnnaTatarenko/work/main/lab_1.html"> </a-assets>
+
+            <a-marker type="pattern" url="https://raw.githubusercontent.com/AnnaTatarenko/work/main/pattern-The_Earth.patt" id="Earth" registerevents> 
+                <a-sphere material = "src:#Earth"></a-sphere>
+            </a-marker>
+    </a-scene>
+</body>
+</html>
