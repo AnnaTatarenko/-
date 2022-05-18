@@ -2,7 +2,6 @@
 
     <head>
         <title>Лабораторна робота 1</title>
-        <meta name="description" content="Build your own planetarium with A-frame">
         <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-star-system-component@1.0.0/index.js"></script>
 
@@ -23,8 +22,6 @@
             <a-mixin id="orbit" animation="property: rotation; loop: true; to: 0 360 0; dur: 40000; easing: linear;"></a-mixin>
 
             <a-assets>
-                <img id="sun-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2F1024px-Map_of_the_full_sun.jpg?1540859304920"
-                    crossorigin="anonymous">
                 <img id="earth-texture" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_2048.jpg"
                     crossorigin="anonymous">
                 <img id="moon-texture" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/moon_1024.jpg" crossorigin="anonymous">
@@ -54,12 +51,6 @@
           
 
         </a-scene>
-
-
-        <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-        <script src="https://button.glitch.me/button.js"></script>
     </body>
 
 </html>
